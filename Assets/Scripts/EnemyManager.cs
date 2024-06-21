@@ -43,7 +43,7 @@ public class EnemyManager : MonoBehaviour
 
     public void UpdateHpValue()
     {
-        _hpSlider.value = (float)GetHp() / ((float)GetMaxHp() + _damage);
+        _hpSlider.value = (float)GetHp() / (float)GetMaxHp();
     }
 
     public void GetDamage(int _damage)
