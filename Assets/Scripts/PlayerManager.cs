@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    GameObject[] _slot;
-    Image[] _slotimage;
+    ////インベントリのスロット
+    //GameObject[] _slot;
+    ////アイテムのイメージ
+    //Image[] _slotimage;
      
     //移動先の座標格納用
     private Vector3 _pos;
@@ -15,12 +17,12 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        _slot[0] = GameObject.Find("Slot1");
-        _slot[1] = GameObject.Find("Slot2");
-        _slot[2] = GameObject.Find("Slot3");
-        _slotimage[0] = _slot[0].GetComponent<Image>();
-        _slotimage[1] = _slot[1].GetComponent<Image>();
-        _slotimage[2] = _slot[2].GetComponent<Image>();
+        //_slot[0] = GameObject.Find("Slot1");
+        //_slot[1] = GameObject.Find("Slot2");
+        //_slot[2] = GameObject.Find("Slot3");
+        //_slotimage[0] = _slot[0].GetComponent<Image>();
+        //_slotimage[1] = _slot[1].GetComponent<Image>();
+        //_slotimage[2] = _slot[2].GetComponent<Image>();
     }
 
 
@@ -37,7 +39,6 @@ public class PlayerManager : MonoBehaviour
         Playermove();
     }
 
-
     void Move()
     {
         //クリックされた時
@@ -50,6 +51,7 @@ public class PlayerManager : MonoBehaviour
 
         }
     }
+
     void Playermove()
     {
         var distance = _pos - transform.position;
@@ -62,28 +64,27 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Item")
-        {
-            SpriteRenderer ItemImage = collision.GetComponent<SpriteRenderer>();
-            if (_slotimage[0] == null)
-            {
-                _slotimage[0].sprite = ItemImage.sprite;
-            }
-            else if (_slotimage[1] == null)
-            {
-                _slotimage[1].sprite = ItemImage.sprite;
-            }
-            else
-            {
-                _slotimage[2].sprite = ItemImage.sprite;
-            }
-            collision.gameObject.SetActive(false);
-        }
+        //if (collision.tag == "Item")
+        //{
+        //    SpriteRenderer ItemImage = collision.GetComponent<SpriteRenderer>();
+        //    if (_slotimage[0] == null)
+        //    {
+        //        _slotimage[0].sprite = ItemImage.sprite;
+        //    }
+        //    else if (_slotimage[1] == null)
+        //    {
+        //        _slotimage[1].sprite = ItemImage.sprite;
+        //    }
+        //    else
+        //    {
+        //        _slotimage[2].sprite = ItemImage.sprite;
+        //    }
+        //    collision.gameObject.SetActive(false);
+        //}
 
         if (collision.tag == "Enemy")
         {
             Debug.Log("GAMEOVER");
-
         }
     }
 
