@@ -18,8 +18,7 @@ public class Attack : MonoBehaviour
         {
             _pushed = true;
             Debug.Log("Attack");
-            collision.GetComponent<EnemyManager>().GetDamage(3);
-            //Destroy(collision.gameObject);
+            collision.GetComponent<EnemyManager>().GetDamage(1);
         }
     }
 
