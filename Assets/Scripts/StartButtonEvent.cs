@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartButtonEvent : MonoBehaviour
 {
@@ -20,5 +21,6 @@ public class StartButtonEvent : MonoBehaviour
     public void OnClickEvent()
     {
         Debug.Log("Start");
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }

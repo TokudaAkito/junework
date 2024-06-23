@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -25,6 +26,7 @@ public class Timer : MonoBehaviour
         if (_countdownSeconds <= 0)
         {
             Debug.Log("TIMEUP");
+            SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
         }
     }
 

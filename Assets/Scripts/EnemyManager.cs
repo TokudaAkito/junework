@@ -13,7 +13,8 @@ public class EnemyManager : MonoBehaviour
     public Slider _slider;
     //現在のダメージ
     private int _damage = 0;
-    public bool _getdamage = false;
+    //ダメージを受けているかの判定
+    bool _getdamage = false;
 
     private void Start()
     {
@@ -24,13 +25,16 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        _getdamage = false;
+        if (!_getdamage)
+        {
+            return;
+        }
         if (_getdamage)
         {
             _hp -= _damage;
+            Debug.Log($"{_hp}");
             _slider.value = (float)_hp / (float)_maxHp;
         }
-
         if (_hp <= 0)
         {
             Destroy(gameObject);

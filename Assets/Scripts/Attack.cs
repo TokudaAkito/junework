@@ -5,7 +5,8 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Transform target;
-    bool _pushed=false;
+    bool _pushed=false;    //GetKeyDownが使えなかったため、キーが押されているかの判定
+    [SerializeField] int _attackDamage;    //攻撃力
     private void Update()
     {
         this.transform.position = target.position;
@@ -18,7 +19,7 @@ public class Attack : MonoBehaviour
         {
             _pushed = true;
             Debug.Log("Attack");
-            collision.GetComponent<EnemyManager>().GetDamage(1);
+            collision.GetComponent<EnemyManager>().GetDamage(_attackDamage);
         }
     }
 

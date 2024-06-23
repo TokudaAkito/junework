@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     ////アイテムのイメージ
     //Image[] _slotimage;
      
-    //移動先の座標格納用
+    //移動用
     private Vector3 _pos;
     [SerializeField] float m_near = 1f;
     [SerializeField] float m_speed = 1f;
