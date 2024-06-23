@@ -29,12 +29,6 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
-        if (_getdamage)
-        {
-            _hp -= _damage;
-            Debug.Log($"{_hp}");
-            _slider.value = (float)_hp / (float)_maxHp;
-        }
         if (_hp <= 0)
         {
             Destroy(gameObject);
@@ -45,5 +39,8 @@ public class EnemyManager : MonoBehaviour
     {
         this._damage += _damage;
         _getdamage = true;
+        _hp -= _damage;
+        Debug.Log($"{_hp}");
+        _slider.value = (float)_hp / (float)_maxHp;
     }
 }
