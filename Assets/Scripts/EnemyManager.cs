@@ -15,7 +15,10 @@ public class EnemyManager : MonoBehaviour
     private int _damage = 0;
     //ダメージを受けているかの判定
     bool _getdamage = false;
+    //死んだかどうかの判定
+    public bool _isDeadEnemy = false;
 
+    ScoreChanger scoreChanger;
     private void Start()
     {
         _slider.value = 1;
@@ -23,7 +26,7 @@ public class EnemyManager : MonoBehaviour
         Debug.Log($"スタートHP:{_hp}");
     }
 
-    private void Update()
+    void Update()
     {
         if (!_getdamage)
         {
@@ -31,7 +34,10 @@ public class EnemyManager : MonoBehaviour
         }
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            _isDeadEnemy = true;
+            scoreChanger.ScorePlus();
+            //this.gameObject.SetActive(false);
+            Destroy( this.gameObject );
         }
     }
 

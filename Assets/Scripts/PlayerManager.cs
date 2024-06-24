@@ -1,6 +1,7 @@
 
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -62,6 +63,7 @@ public class PlayerManager : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("GAMEOVER");
+            SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
         }
     }
 
