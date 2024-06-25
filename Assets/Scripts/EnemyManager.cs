@@ -49,6 +49,6 @@ public class EnemyManager : MonoBehaviour
     void Dead()
     {
         Destroy(this.gameObject);
-        GameManager._instance._score += 10;
+        GameManager._instance._score += 1;
     }
 }
