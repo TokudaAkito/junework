@@ -12,8 +12,8 @@ public class EnemyGenerator : MonoBehaviour
     {
         for (int i = 0; i < _enemyPrefab.Length; i++)
         {
-            float randomX = Random.Range(-60, 60);
-            float randomY = Random.Range(-60, 60);
+            float randomX = Random.Range(-50, 50);
+            float randomY = Random.Range(-50, 50);
             GameObject enemy = Instantiate(_enemyPrefab[i]);
             enemy.transform.position = new Vector3(randomX, randomY, 0f);
         }
@@ -28,8 +28,8 @@ public class EnemyGenerator : MonoBehaviour
         {
             for (int i = 0; i < _enemyPrefab.Length; i++)
             {
-                float randomX = Random.Range(-60, 60);
-                float randomY = Random.Range(-60, 60);
+                float randomX = Random.Range(-50, 50);
+                float randomY = Random.Range(-50, 50);
                 GameObject enemy = Instantiate(_enemyPrefab[i]);
                 enemy.transform.position = new Vector3(randomX, randomY, 0f);
             }

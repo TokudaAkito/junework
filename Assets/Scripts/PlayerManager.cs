@@ -13,10 +13,11 @@ public class PlayerManager : MonoBehaviour
     private Vector3 _pos;
     [SerializeField] float m_near = 1f;
     [SerializeField] float m_speed = 1f;
+    AudioSource _audioSource;
 
     void Start()
     {
-
+        _audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -61,6 +62,7 @@ public class PlayerManager : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("GAMEOVER");
+            _audioSource.Play();
             SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
         }
         if (collision.tag == "PowerUp")

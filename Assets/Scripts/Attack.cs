@@ -11,9 +11,11 @@ public class Attack : MonoBehaviour
     [SerializeField] public float _attackSpeed;     //アタックスピード  
     float _cooltime;
     bool _isAttackable = true;   //攻撃できるかできないか
+    AudioSource _audioSource;
     private void Start()
     {
         _cooltime = 0.0f;
+        _audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -37,6 +39,7 @@ public class Attack : MonoBehaviour
             _pushed = true;
             Debug.Log("Attack");
             collision.GetComponent<EnemyManager>().GetDamage(_attackDamage);
+            _audioSource.Play();
             _isAttackable = false;
         }
     }
