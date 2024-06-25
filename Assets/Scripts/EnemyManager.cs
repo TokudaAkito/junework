@@ -18,7 +18,6 @@ public class EnemyManager : MonoBehaviour
     //Ž€‚ñ‚¾‚©‚Ç‚¤‚©‚Ì”»’è
     public bool _isDeadEnemy = false;
 
-    ScoreChanger _scoreChanger;
     private void Start()
     {
         _slider.value = 1;
@@ -28,16 +27,13 @@ public class EnemyManager : MonoBehaviour
 
     void Update()
     {
-        _isDeadEnemy = true;
         if (!_getdamage)
         {
             return;
         }
         if (_hp <= 0)
         {
-            //Destroy(this.gameObject);
-            this.gameObject.SetActive(false);
-            _scoreChanger.ScorePlus();
+            Dead();
         }
     }
 
@@ -48,5 +44,11 @@ public class EnemyManager : MonoBehaviour
         _hp -= _damage;
         Debug.Log($"{_hp}");
         _slider.value = (float)_hp / (float)_maxHp;
+    }
+
+    void Dead()
+    {
+        Destroy(this.gameObject);
+        GameManager._instance._score += 10;
     }
 }

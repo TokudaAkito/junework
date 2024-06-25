@@ -21,6 +21,7 @@ public class StartButtonEvent : MonoBehaviour
     public void OnClickEvent()
     {
         Debug.Log("Start");
+        GameManager._instance._score = 0;
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }
