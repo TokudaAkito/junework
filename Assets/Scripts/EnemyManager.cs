@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public class EnemyManager : MonoBehaviour
@@ -22,7 +23,7 @@ public class EnemyManager : MonoBehaviour
     {
         _slider.value = 1;
         _hp = _maxHp;
-        Debug.Log($"スタートHP:{_hp}");
+        //this.transform.DOMove(new Vector3(0f, 0f, 0f), 10f).SetLoops(5, LoopType.Yoyo);
     }
 
     void Update()

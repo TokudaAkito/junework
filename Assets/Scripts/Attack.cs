@@ -6,9 +6,9 @@ public class Attack : MonoBehaviour
 {
     public Transform target;
     bool _pushed=false;    //GetKeyDownが使えなかったため、キーが押されているかの判定
-    [SerializeField] int _attackDamage;    //攻撃力
+    [SerializeField] public int _attackDamage;    //攻撃力
     //攻撃のインターバル
-    [SerializeField] float _attackSpeed;    
+    [SerializeField] public float _attackSpeed;     //アタックスピード  
     float _cooltime;
     bool _isAttackable = true;   //攻撃できるかできないか
     private void Start()

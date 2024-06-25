@@ -63,6 +63,14 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("GAMEOVER");
             SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
         }
+        if (collision.tag == "PowerUp")
+        {
+            Destroy(collision);
+        }
+        if (collision.tag == "SpeedUp")
+        {
+            Destroy(collision);
+        }
     }
 
 }
