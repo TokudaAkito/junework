@@ -1197,6 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e5a2e62f415c34594d3628a1fffd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: 0
 --- !u!4 &1310293544
 Transform:
   m_ObjectHideFlags: 0
@@ -1246,6 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 10
   _slider: {fileID: 1614079742}
+  _isDeadEnemy: 0
 --- !u!50 &1322242437
 Rigidbody2D:
   serializedVersion: 4
@@ -2422,7 +2424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1672740693}
   _attackDamage: 3
-  _attackSpeed: 2
+  _attackSpeed: 0
 --- !u!61 &2108230742
 BoxCollider2D:
   m_ObjectHideFlags: 0

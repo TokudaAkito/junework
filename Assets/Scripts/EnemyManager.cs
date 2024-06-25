@@ -34,10 +34,10 @@ public class EnemyManager : MonoBehaviour
         }
         if (_hp <= 0)
         {
+            Destroy(this.gameObject);
             _isDeadEnemy = true;
             scoreChanger.ScorePlus();
             //this.gameObject.SetActive(false);
-            Destroy( this.gameObject );
         }
     }
 
